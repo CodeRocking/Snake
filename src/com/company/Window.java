@@ -4,21 +4,22 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends Canvas {
-  public static final long serialVersionUID = 240840600533728354L;
 
-  public Window(int width, int height, String title, Game game){
-    JFrame frame = new JFrame(title);
+    private static final long serialVersionUID = -4499223280698849981L;
 
-    frame.setPreferredSize(new Dimension(width, height));
-    frame.setMaximumSize(new Dimension(width, height));
-    frame.setMinimumSize(new Dimension(width, height));
+    public Window(int width, int height, String title, Game game) {
+        JFrame frame = new JFrame(title);
 
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setResizable(false);
-    frame.setLocationRelativeTo(null);
-    frame.add(game);
-    frame.setVisible(true);
-    game.start();
+        frame.setPreferredSize(new Dimension(width, height));
+        frame.setMaximumSize(new Dimension(width, height));
+        frame.setMinimumSize(new Dimension(width, height));
 
-  }
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.add(game);
+        frame.setVisible(true);
+        game.start();
+
+    }
 }

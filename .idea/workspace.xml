@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c313aadd-b3b3-4f93-9902-0d62fa4015fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/CellType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/com/company/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Snake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +70,16 @@
       <updated>1589826580982</updated>
       <workItem from="1589826589217" duration="285000" />
       <workItem from="1589830098590" duration="636000" />
-      <workItem from="1590106107141" duration="649000" />
+      <workItem from="1590106107141" duration="2832000" />
     </task>
+    <task id="LOCAL-00001" summary="Working Frame">
+      <created>1590107151908</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590107151908</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,41 +97,46 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working Frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Frame" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590106951714">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1590106951714" />
-    <state width="1398" height="305" key="GridCell.Tab.0.bottom" timestamp="1589894169158">
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590107067881">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1590107067881" />
+    <state x="297" y="25" key="CommitChangelistDialog2" timestamp="1590107151763">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="297" y="25" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1590107151763" />
+    <state width="1398" height="139" key="GridCell.Tab.0.bottom" timestamp="1590109419298">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1589830501964" />
-    <state width="1398" height="305" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1589894169158" />
-    <state width="1398" height="305" key="GridCell.Tab.0.center" timestamp="1589894169157">
+    <state width="1398" height="139" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590109419298" />
+    <state width="1398" height="139" key="GridCell.Tab.0.center" timestamp="1590109419297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1589830501962" />
-    <state width="1398" height="305" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1589894169157" />
-    <state width="1398" height="305" key="GridCell.Tab.0.left" timestamp="1589894169157">
+    <state width="1398" height="139" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590109419297" />
+    <state width="1398" height="139" key="GridCell.Tab.0.left" timestamp="1590109419296">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1589830501961" />
-    <state width="1398" height="305" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1589894169157" />
-    <state width="1398" height="305" key="GridCell.Tab.0.right" timestamp="1589894169158">
+    <state width="1398" height="139" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590109419296" />
+    <state width="1398" height="139" key="GridCell.Tab.0.right" timestamp="1590109419297">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1589830501963" />
-    <state width="1398" height="305" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1589894169158" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Game.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1398" height="139" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590109419297" />
+    <state x="508" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590107298695">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="508" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1590107298695" />
   </component>
 </project>
