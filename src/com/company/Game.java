@@ -1,5 +1,7 @@
 package com.company;
 
+import java.awt.Canvas;
+
 public class Game extends Canvas implements Runnable {
 
   public static final int WIDTH = 1216, HEIGHT = 1088;
