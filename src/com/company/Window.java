@@ -1,23 +1,21 @@
 package com.company;
 
-import java.awt.Canvas;
-import java.awt.Dimensions;
-
-import java.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public class Window extends Canvas {
-  public static final long serialVersionHudUID = 240840600533728354L;
+  public static final long serialVersionUID = 240840600533728354L;
 
-  public Window(int width, int height, String title){
-    Jframe frame = new JFrame(title);
+  public Window(int width, int height, String title, Game game){
+    JFrame frame = new JFrame(title);
 
-    frame.setPreferredsize(new Dimension(width, hieght));
-    frame.setMaximumSize(new Dimension(width, hieght));
-    frame.setMinimumsize(new Dimension(width, hieght));
+    frame.setPreferredSize(new Dimension(width, height));
+    frame.setMaximumSize(new Dimension(width, height));
+    frame.setMinimumSize(new Dimension(width, height));
 
-    frame.setDefaultCloseOperation(Jframe.EXIT_ON_CLOSE);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setResizable(false);
-    frame.setLocationTo(null);
+    frame.setLocationRelativeTo(null);
     frame.add(game);
     frame.setVisible(true);
     game.start();

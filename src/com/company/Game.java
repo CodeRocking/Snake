@@ -4,7 +4,7 @@ import java.awt.Canvas;
 
 public class Game extends Canvas implements Runnable {
 
-  public static final int WIDTH = 1216, HEIGHT = 1088;
+  public static final int WIDTH = 32 * (17 + 2), HEIGHT = 32 * (15 + 2);
 
   public Game() {
     new Window(WIDTH, HEIGHT, "Snake", this);
