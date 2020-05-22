@@ -1,3 +1,4 @@
+package com.company;
 // To represent a snake
 import java.util.LinkedList;
 

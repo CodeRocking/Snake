@@ -1,3 +1,5 @@
+package com.company;
+
 public class Board {
 
 	final int ROW_COUNT, COL_COUNT;

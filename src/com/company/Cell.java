@@ -1,3 +1,5 @@
+package com.company;
+
 // To represent a cell of display board.
 public class Cell {
 
