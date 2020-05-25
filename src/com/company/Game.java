@@ -6,13 +6,20 @@ import java.awt.image.BufferStrategy;
 public class Game extends Canvas implements Runnable {
 
     private static final long serialVersionUID = -7343609367987596684L;
-
-    public static final int WIDTH = 32 * (17 + 2), HEIGHT = 32 * (15 + 2);
+    public static final int WIDTH = 32 * (17), HEIGHT = 32 * (17);
     private Thread thread;
     private Boolean running = false;
+    private Handler handler;
 
     public Game() {
+        handler = new Handler();
         new Window(WIDTH, HEIGHT, "Snake", this);
+
+        for (int xinc = 0; xinc < 17; xinc += 2) {
+            for (int yinc = 0; yinc < 17; yinc += 2) {
+                handler.addObject(new Snake(xinc, yinc, ID.Snake));
+            }
+        }
     }
 
     public synchronized void start() {
@@ -30,9 +37,10 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
-    public void run() {
+    public void run() { //Game loop
+        this.requestFocus();
         long lastTime = System.nanoTime();
-        double amountOfTicks = 60.0;
+        double amountOfTicks = 2.0;  //changes speed
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         long timer = System.currentTimeMillis();
@@ -60,7 +68,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void tick() {
-
+        handler.tick();
     }
 
     private void render() {
@@ -72,8 +80,13 @@ public class Game extends Canvas implements Runnable {
 
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+        g.setColor(new Color(71, 122, 39));
+        g.fillRect(0, 0, WIDTH + 32, HEIGHT + 32);
+
+        g.setColor(new Color(147, 202, 57));
+        g.fillRect(16, 16, WIDTH, HEIGHT);
+
+        handler.render(g);
 
         g.dispose();
         bs.show();
