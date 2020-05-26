@@ -10,7 +10,6 @@ public class Game extends Canvas implements Runnable {
     public static final int WIDTH = 32 * (17), HEIGHT = 32 * (17);
     private Thread thread;
     private boolean running = false;
-    private int score = 1;
     private Handler handler;
     private Window window;
 
@@ -32,7 +31,7 @@ public class Game extends Canvas implements Runnable {
         try {
             thread.join();
             running = false;
-            window.gameOver(score);
+            window.gameOver(handler.getScore());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +87,7 @@ public class Game extends Canvas implements Runnable {
         g.fillRect(16, 16, WIDTH, HEIGHT);
 
         g.setColor(Color.WHITE);
-        g.drawString("Score: " + score, 16, 12);
+        g.drawString("Score: " + handler.getScore(), 16, 12);
 
         handler.render(g);
 
@@ -98,14 +97,6 @@ public class Game extends Canvas implements Runnable {
 
     public boolean isRunning() {
         return running;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
 
     public static void main(String[] args) {

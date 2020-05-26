@@ -8,6 +8,7 @@ public class Handler { //This class maintains, updates, and renders all of the g
 
     LinkedList<GameObject> objects = new LinkedList<>();
     int appleCount = 1;
+    private int score = 1;
 
     public void tick() {
         int tailCounter = 0;
@@ -30,11 +31,12 @@ public class Handler { //This class maintains, updates, and renders all of the g
         }
 
         for (Apple tempApple : apples) {
-            if (snake.getX() == tempApple.getX() && snake.getY() == tempApple.getY()) {
+            if (snake.getX() == tempApple.getX() && snake.getY() == tempApple.getY()) {  //Snake ate apple
                 int[] xy = randomXY(snake, tails);
                 tempApple.setX(xy[0]);
                 tempApple.setY(xy[1]);
                 addObject(new Tail(objects.getLast(), ID.Tail));
+                score++;
             }
         }
     }
@@ -61,6 +63,10 @@ public class Handler { //This class maintains, updates, and renders all of the g
             if (tempTail.getX() == xy[0] && tempTail.getY() == xy[1]) xy = randomXY(snake, tails);
         }
         return xy;
+    }
+
+    public int getScore() {
+        return score;
     }
 
 }
