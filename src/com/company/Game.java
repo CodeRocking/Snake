@@ -9,20 +9,17 @@ public class Game extends Canvas implements Runnable {
     private static final long serialVersionUID = -7343609367987596684L;
     public static final int WIDTH = 32 * (17), HEIGHT = 32 * (17);
     private Thread thread;
-    private Boolean running = false;
+    private boolean running = false;
+    private int score = 1;
     private Handler handler;
+    private Window window;
 
     public Game() {
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
-        new Window(WIDTH, HEIGHT, "Snake", this);
-
-        //for (int xinc = 0; xinc < 17; xinc += 2) {
-        //for (int yinc = 0; yinc < 17; yinc += 2) {
-        handler.addObject(new Snake(4, 8, ID.Snake));
+        window = new Window(WIDTH, HEIGHT, "Snake", this);
         handler.addObject(new Apple(12, 8, ID.Apple));
-        //}
-        //}
+        handler.addObject(new Snake(4, 8, ID.Snake));
     }
 
     public synchronized void start() {
@@ -35,6 +32,7 @@ public class Game extends Canvas implements Runnable {
         try {
             thread.join();
             running = false;
+            window.gameOver(score);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -89,10 +87,25 @@ public class Game extends Canvas implements Runnable {
         g.setColor(new Color(147, 202, 57));
         g.fillRect(16, 16, WIDTH, HEIGHT);
 
+        g.setColor(Color.WHITE);
+        g.drawString("Score: " + score, 16, 12);
+
         handler.render(g);
 
         g.dispose();
         bs.show();
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public static void main(String[] args) {

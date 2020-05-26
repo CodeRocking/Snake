@@ -10,6 +10,9 @@ public class Snake extends GameObject {
 
     @Override
     public void tick() {
+        prevX = x;
+        prevY = y;
+
         x += velX;
         y += velY;
     }
@@ -19,5 +22,4 @@ public class Snake extends GameObject {
         g.setColor(Color.WHITE);
         g.fillRect((x * 32) + 16, (y * 32) + 16, 32, 32);
     }
-
 }

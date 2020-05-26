@@ -2,5 +2,7 @@ package com.company;
 
 public enum ID {
     Snake(),
-    Apple()
+    Tail(),
+    Apple(),
+    Temp()
 }
