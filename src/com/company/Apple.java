@@ -2,21 +2,20 @@ package com.company;
 
 import java.awt.*;
 
-public class Snake extends GameObject {
+public class Apple extends GameObject {
 
-    public Snake(int x, int y, ID id) {
+    public Apple(int x, int y, ID id) {
         super(x, y, id);
     }
 
     @Override
     public void tick() {
-        x += velX;
-        y += velY;
+
     }
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.WHITE);
+        g.setColor(Color.RED);
         g.fillRect((x * 32) + 16, (y * 32) + 16, 32, 32);
     }
 
