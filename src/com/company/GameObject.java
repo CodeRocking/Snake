@@ -4,7 +4,10 @@ import java.awt.*;
 
 public abstract class GameObject {
 
-    protected int x, y, velX, velY;
+    protected int x;
+    protected int y;
+    protected int velX;
+    protected int velY;
     protected ID id;
 
     public GameObject(int x, int y, ID id) {

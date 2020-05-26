@@ -10,7 +10,9 @@ public class Game extends Canvas implements Runnable {
     public static final int WIDTH = 32 * (17), HEIGHT = 32 * (17);
     private Thread thread;
     private Boolean running = false;
-    private Handler handler;
+    public Handler handler;
+    public static Snake newSnake = new Snake(4, 8, ID.Snake);
+    public static Apple newApple = new Apple(12, 8, ID.Apple);
 
     public Game() {
         handler = new Handler();
@@ -19,8 +21,9 @@ public class Game extends Canvas implements Runnable {
 
         //for (int xinc = 0; xinc < 17; xinc += 2) {
         //for (int yinc = 0; yinc < 17; yinc += 2) {
-        handler.addObject(new Snake(4, 8, ID.Snake));
-        handler.addObject(new Apple(12, 8, ID.Apple));
+        // handler.addObject(new Snake(4, 8, ID.Snake));
+        handler.addObject(newSnake);
+        handler.addObject(newApple);
         //}
         //}
     }
