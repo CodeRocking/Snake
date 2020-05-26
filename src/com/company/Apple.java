@@ -32,7 +32,7 @@ public class Apple extends GameObject {
             snakeBody.add(new Snake(pastX, pastY, ID.Snake));
             touch = 0;
         }
-
+//
         if (newApple.x == newSnake.x && newApple.y == newSnake.y) {
             Random rand = new Random();
             int newX = rand.nextInt(17);
