@@ -7,10 +7,12 @@ public class Window extends Canvas { //Handles the window for the game
 
     private static final long serialVersionUID = -4499223280698849981L;
 
-    private JFrame frame;
+    private static JFrame frame;
+    private static Game game;
 
     public Window(int width, int height, String title, Game game) {
         frame = new JFrame(title);
+        this.game = game;
 
         frame.setSize(new Dimension(width + 32 + frame.getInsets().left + frame.getInsets().right, height + 32 + 22 + frame.getInsets().top + frame.getInsets().bottom));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,11 +24,17 @@ public class Window extends Canvas { //Handles the window for the game
         game.start();
     }
 
-    public void gameOver(int score) {
+    public static void gameOver(int score) {
         if (score >= 286) {
             JOptionPane.showMessageDialog(frame, "You Won!");
         }
         JOptionPane.showMessageDialog(frame, "Score: " + score);
+        int n = JOptionPane.showConfirmDialog(frame, "Play Again?", "Play Again?", JOptionPane.YES_NO_OPTION);
+        if (n == 0) {
+            game.restart();
+        } else {
+            System.exit(0);
+        }
     }
 
 }

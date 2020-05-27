@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -27,14 +26,11 @@ public class Game extends Canvas implements Runnable {
         running = true;
     }
 
-    public synchronized void stop() {
-        try {
-            thread.join();
-            running = false;
-            window.gameOver(handler.getScore());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public synchronized void restart() {
+        handler = new Handler();
+        this.addKeyListener(new KeyInput(handler));
+        handler.addObject(new Apple(12, 8, ID.Apple));
+        handler.addObject(new Snake(4, 8, ID.Snake));
     }
 
     public void run() { //Game loop

@@ -39,6 +39,10 @@ public class Handler { //This class maintains, updates, and renders all of the g
                 score++;
             }
         }
+
+        if (isDead(snake, tails)) {
+            Window.gameOver(getScore());
+        }
     }
 
     public void render(Graphics g) {
@@ -59,10 +63,23 @@ public class Handler { //This class maintains, updates, and renders all of the g
         int[] xy = {new Random().nextInt(17), new Random().nextInt(17)};
 
         if (snake.getX() == xy[0] && snake.getY() == xy[1]) xy = randomXY(snake, tails);
+
         for (Tail tempTail : tails) {
             if (tempTail.getX() == xy[0] && tempTail.getY() == xy[1]) xy = randomXY(snake, tails);
         }
+
         return xy;
+    }
+
+    private boolean isDead(Snake snake, Tail[] tails) {
+        int x = snake.getX();
+        int y = snake.getY();
+
+        if (x < 0 || x >= 17 || y < 0 || y >= 17) return true;
+
+        for (Tail tempTail : tails) if (x == tempTail.getX() && y == tempTail.getY()) return true;
+
+        return false;
     }
 
     public int getScore() {
