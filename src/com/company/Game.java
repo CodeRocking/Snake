@@ -1,3 +1,4 @@
+//Names: Neil Agrawal, Johnathan Tong, and Faraz
 package com.company;
 
 import java.awt.*;
@@ -36,7 +37,7 @@ public class Game extends Canvas implements Runnable {
     public void run() { //Game loop
         this.requestFocus();
         long lastTime = System.nanoTime();
-        double amountOfTicks = 3;  //changes speed
+        double amountOfTicks = 5;  //changes speed
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         long timer = System.currentTimeMillis();
