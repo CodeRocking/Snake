@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c313aadd-b3b3-4f93-9902-0d62fa4015fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/com/company/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/com/company/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GameObject.java" afterDir="false" />
@@ -36,7 +35,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1c5lxKi9OaSmGlKEFpdGyXZdnXL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -225,10 +226,11 @@
     <state width="1398" height="139" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1590449570167" />
     <state width="3158" height="320" key="GridCell.Tab.0.right/0.23.1440.877/-3200.-540.3200.1800@-3200.-540.3200.1800" timestamp="1590538101025" />
     <state width="1398" height="139" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1590424697510" />
-    <state x="565" y="159" key="RollbackChangesDialog" timestamp="1590416574847">
+    <state x="565" y="159" key="RollbackChangesDialog" timestamp="1590679658028">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="565" y="159" key="RollbackChangesDialog/0.0.1440.900/-2560.-540.2560.1440@0.0.1440.900" timestamp="1590416574847" />
+    <state x="565" y="159" key="RollbackChangesDialog/0.0.1440.900/-3200.-540.3200.1800@0.0.1440.900" timestamp="1590679658028" />
     <state x="565" y="159" key="RollbackChangesDialog/0.0.1440.900/-3840.-1260.3840.2160@0.0.1440.900" timestamp="1590414520640" />
     <state x="-2099" y="-1" key="SettingsEditor" timestamp="1590524424505">
       <screen x="-3200" y="-540" width="3200" height="1800" />
@@ -250,5 +252,15 @@
     </state>
     <state x="-2344" y="-148" width="1489" height="1352" key="search.everywhere.popup/0.0.1440.900/-3200.-540.3200.1800@-3200.-540.3200.1800" timestamp="1590524292121" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1590356938922" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Apple.java</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

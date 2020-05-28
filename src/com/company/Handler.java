@@ -5,12 +5,20 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Handler { //This class maintains, updates, and renders all of the game object (apples, snake)
+/**
+ * This class maintains, updates, renders, and makes decisions for all of the GameObjects
+ *
+ * @author Neil Agrawal and Johnathan Tong
+ */
+public class Handler {
 
     LinkedList<GameObject> objects = new LinkedList<>();
     int appleCount = 1;
     private int score = 1;
 
+    /**
+     * This ticks "iterates" all of the GameObjects movements and decides what to do depending on the positions of the objects
+     */
     public void tick() {
         int tailCounter = 0;
         int appleCounter = 0;
@@ -46,20 +54,42 @@ public class Handler { //This class maintains, updates, and renders all of the g
         }
     }
 
+    /**
+     * This renders all of the GameObjects
+     *
+     * @param g Graphics
+     */
     public void render(Graphics g) {
         for (GameObject tempObject : objects) {
             tempObject.render(g);
         }
     }
 
+    /**
+     * This adds a GameObject
+     *
+     * @param object GameObject to add
+     */
     public void addObject(GameObject object) {
         objects.add(object);
     }
 
+    /**
+     * This removes a GameObject
+     *
+     * @param object GameObject to remove
+     */
     public void removeObject(GameObject object) {
         objects.remove(object);
     }
 
+    /**
+     * This returns a recursively generated a random x,y pair that doesn't coincide with the Snake
+     *
+     * @param snake Snake object to avoid
+     * @param tails Tail objects to avoid
+     * @return x, y pair
+     */
     private int[] randomXY(Snake snake, Tail[] tails) {
         int[] xy = {new Random().nextInt(17), new Random().nextInt(17)};
 
@@ -72,6 +102,13 @@ public class Handler { //This class maintains, updates, and renders all of the g
         return xy;
     }
 
+    /**
+     * This returns true if the snake is dead after checking all of the cases
+     *
+     * @param snake Snake object to check
+     * @param tails Tail objects to avoid
+     * @return A boolean value
+     */
     private boolean isDead(Snake snake, Tail[] tails) {
         int x = snake.getX();
         int y = snake.getY();
@@ -83,6 +120,11 @@ public class Handler { //This class maintains, updates, and renders all of the g
         return false;
     }
 
+    /**
+     * This returns the current score
+     *
+     * @return Score
+     */
     public int getScore() {
         return score;
     }

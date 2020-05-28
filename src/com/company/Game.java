@@ -4,6 +4,11 @@ package com.company;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/**
+ * This class runs the game
+ *
+ * @author Neil Agrawal, Johnathan Tong, and Faraz Mirza
+ */
 public class Game extends Canvas implements Runnable {
 
     private static final long serialVersionUID = -7343609367987596684L;
@@ -13,6 +18,9 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
     private Window window;
 
+    /**
+     * This constructs a Game object
+     */
     public Game() {
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
@@ -21,12 +29,18 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new Snake(4, 8, ID.Snake));
     }
 
+    /**
+     * This starts the game
+     */
     public synchronized void start() {
         thread = new Thread(this);
         thread.start();
         running = true;
     }
 
+    /**
+     * This restarts the game
+     */
     public synchronized void restart() {
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
@@ -34,6 +48,9 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new Snake(4, 8, ID.Snake));
     }
 
+    /**
+     * This is the game loop that runs the game
+     */
     public void run() { //Game loop
         this.requestFocus();
         long lastTime = System.nanoTime();
@@ -64,10 +81,16 @@ public class Game extends Canvas implements Runnable {
 
     }
 
+    /**
+     * This tells the handler to tick "iterate" movement in the game
+     */
     private void tick() {
         handler.tick();
     }
 
+    /**
+     * This renders the game board
+     */
     private void render() {
         BufferStrategy bs = this.getBufferStrategy();
         if (bs == null) {
@@ -92,10 +115,20 @@ public class Game extends Canvas implements Runnable {
         bs.show();
     }
 
+    /**
+     * This returns if the game is running
+     *
+     * @return is the game running
+     */
     public boolean isRunning() {
         return running;
     }
 
+    /**
+     * Main Method
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         new Game();
     }

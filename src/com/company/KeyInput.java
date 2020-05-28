@@ -4,6 +4,11 @@ package com.company;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * This class gathers keyboard input
+ *
+ * @author Neil Agrawal
+ */
 public class KeyInput extends KeyAdapter {
 
     private Handler handler;
@@ -12,10 +17,18 @@ public class KeyInput extends KeyAdapter {
     private boolean isDownLastPressed;
     private boolean isRightLastPressed;
 
+    /**
+     * This constructs a KeyInput object from the Game Handler
+     * @param handler Handler for the game
+     */
     public KeyInput(Handler handler) {
         this.handler = handler;
     }
 
+    /**
+     * This decides what to do when a key is pressed (when a KeyEvent occurs)
+     * @param e KeyEvent
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();

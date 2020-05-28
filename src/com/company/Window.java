@@ -4,6 +4,11 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * This class creates a Window for the game to run in as well as popups that display the score and restart the game
+ *
+ * @author Neil Agrawal
+ */
 public class Window extends Canvas { //Handles the window for the game
 
     private static final long serialVersionUID = -4499223280698849981L;
@@ -11,6 +16,13 @@ public class Window extends Canvas { //Handles the window for the game
     private static JFrame frame;
     private static Game game;
 
+    /**
+     * This constructs a window of the appropriate width and height for the game
+     * @param width Width of the window
+     * @param height Height of the window
+     * @param title Title of the window
+     * @param game Game to put in the window
+     */
     public Window(int width, int height, String title, Game game) {
         frame = new JFrame(title);
         this.game = game;
@@ -25,6 +37,10 @@ public class Window extends Canvas { //Handles the window for the game
         game.start();
     }
 
+    /**
+     * This displays the popups with the score and the option te restart when the game is over
+     * @param score Score
+     */
     public static void gameOver(int score) {
         if (score >= 286) {
             JOptionPane.showMessageDialog(frame, "You Won!");
